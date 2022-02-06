@@ -1,0 +1,33 @@
+package com.BST.gl;
+
+import java.util.TreeMap;
+
+public class Skewed_Tree {
+
+	public static Node node;
+
+	// Class of the node
+	static class Node {
+		int val;
+		Node left, right;
+
+		Node(int item) {
+			val = item;
+			left = right = null;
+		}
+
+		// Driver Code
+		public static void main(String[] args) {
+			// TODO Auto-generated method stub
+			node = new Node(50);
+			node.left = new Node(30);
+			node.right = new Node(60);
+			node.left.left = new Node(10);
+			node.right.left = new Node(55);
+			int val = 0;
+			MainBSTTree main = new MainBSTTree();
+			Node headNode = main.skewedTree(node, val);
+			main.traverseRightSkewed(headNode);
+		}
+	}
+}
